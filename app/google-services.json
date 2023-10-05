@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "190394242151",
+    "project_id": "opportunityowl-f0778",
+    "storage_bucket": "opportunityowl-f0778.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190394242151:android:d728ecb0b43bcdf6c130c2",
+        "android_client_info": {
+          "package_name": "com.patar_dev.opportunityowl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt80ZGt47t0EkOM6CZkId_2oI6PxGmu-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
