@@ -12,7 +12,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/userImage"
@@ -38,6 +38,7 @@
                 app:layout_constraintTop_toBottomOf="@id/userImage" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_10sdp"
@@ -59,6 +60,7 @@
                         android:layout_margin="@dimen/_5sdp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/userName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Enter your name"
@@ -74,9 +76,11 @@
                         android:layout_margin="@dimen/_5sdp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/userEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter your name"
+                            android:hint="Enter your email"
+                            android:inputType="textEmailAddress"
                             android:textSize="@dimen/_16ssp"
                             android:textColor="@color/black"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -88,9 +92,11 @@
                         android:layout_margin="@dimen/_5sdp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/userProfession"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter your name"
+                            android:hint="Profession(student,recruiter)"
+                            android:inputType="text"
                             android:textSize="@dimen/_16ssp"
                             android:textColor="@color/black"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -98,12 +104,15 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:endIconMode="password_toggle"
                         android:layout_margin="@dimen/_5sdp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/userPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter your name"
+                            android:hint="Enter password"
+                            android:inputType="textPassword"
                             android:textSize="@dimen/_16ssp"
                             android:textColor="@color/black"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -112,12 +121,15 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_5sdp">
+                        app:endIconMode="password_toggle"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_20sdp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/userConfirmPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter your name"
+                            android:hint="Confirm password"
                             android:textSize="@dimen/_16ssp"
                             android:textColor="@color/black"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -127,6 +139,21 @@
 
 
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_20ssp"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="@id/card"
+                app:layout_constraintEnd_toEndOf="@id/card"
+                app:layout_constraintTop_toBottomOf="@id/card"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_50sdp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
