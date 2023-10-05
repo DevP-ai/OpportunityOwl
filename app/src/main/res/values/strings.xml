@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">OpportunityOwl</string>
+    <string name="apiKey">4426513cfdf1fcb11574aa9e1a51b485c9c1a3b3c580f067be30b6141216da12</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
