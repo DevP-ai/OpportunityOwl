@@ -9,7 +9,8 @@
         android:id="@+id/homeFragment"
         android:name="com.patar_dev.opportunityowl.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+    </fragment>
     <fragment
         android:id="@+id/resourceFragment"
         android:name="com.patar_dev.opportunityowl.fragment.ResourceFragment"
@@ -25,4 +26,5 @@
         android:name="com.patar_dev.opportunityowl.fragment.JobFragment"
         android:label="fragment_job"
         tools:layout="@layout/fragment_job" />
+
 </navigation>
