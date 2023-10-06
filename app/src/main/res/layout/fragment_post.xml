@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <!-- post_fragment.xml -->
                 <LinearLayout
                     android:layout_marginStart="@dimen/_5sdp"
@@ -38,6 +39,7 @@
                         android:hint="Enter text"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_6sdp"
                         android:gravity="start"/>
 
                     <ImageView
