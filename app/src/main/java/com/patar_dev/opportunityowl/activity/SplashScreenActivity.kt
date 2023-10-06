@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.animation.AnimationUtils
+import com.google.firebase.auth.FirebaseAuth
 import com.patar_dev.opportunityowl.R
 import com.patar_dev.opportunityowl.databinding.ActivitySplashScreenBinding
 
@@ -20,8 +21,13 @@ class SplashScreenActivity : AppCompatActivity() {
        binding.imgLogo.startAnimation(animation)
 
        Handler(Looper.myLooper()!!).postDelayed({
-           startActivity(Intent(this,RegistrationActivity::class.java))
-           finish()
+           if(FirebaseAuth.getInstance().currentUser !=null){
+               startActivity(Intent(this,MainActivity::class.java))
+               finish()
+           }else {
+               startActivity(Intent(this, RegistrationActivity::class.java))
+               finish()
+           }
        },3000)
     }
 }
