@@ -24,7 +24,14 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding=FragmentHomeBinding.inflate(layoutInflater)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        binding.edtPost.setOnClickListener{
+            val fragmentManager = requireActivity().supportFragmentManager
+            val postFragment = PostFragment()
+            postFragment.showFullWidthPopup(fragmentManager)
+        }
+
         return binding.root
     }
 
@@ -32,7 +39,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
     }
-
-
 }
