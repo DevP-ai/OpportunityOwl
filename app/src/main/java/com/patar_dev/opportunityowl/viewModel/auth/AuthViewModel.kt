@@ -15,6 +15,7 @@ class AuthViewModel:ViewModel() {
     private val storage=FirebaseStorage.getInstance()
 
     private var registrationLiveData=MutableLiveData<Boolean>()
+    private var loginLiveData=MutableLiveData<Boolean>()
 
     fun registration(email:String,password:String):LiveData<Boolean>{
        auth.createUserWithEmailAndPassword(email,password)
@@ -42,5 +43,17 @@ class AuthViewModel:ViewModel() {
             .child(auth.currentUser!!.uid!!)
             .setValue(data)
 
+    }
+
+    fun loginUser(email: String,password: String):LiveData<Boolean>{
+        auth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener {task->
+                 if(task.isSuccessful){
+                     loginLiveData.postValue(true)
+                 }else {
+                     loginLiveData.postValue(false)
+                 }
+            }
+        return loginLiveData
     }
 }
