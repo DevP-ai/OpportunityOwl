@@ -17,6 +17,6 @@ class RegistrationActivity : AppCompatActivity() {
         binding.txtLogin.setOnClickListener {
             startActivity(Intent(this,LoginActivity::class.java))
         }
-        
+
     }
 }
