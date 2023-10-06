@@ -13,13 +13,13 @@ import com.patar_dev.opportunityowl.viewModel.IndiaJobsViewModel
 
 class JobFragment : Fragment() {
     private lateinit var binding: FragmentJobBinding
-    private lateinit var indiaJobsViewModel: IndiaJobsViewModel
-    private lateinit var jobListAdapter: JobListAdapter
+//    private lateinit var indiaJobsViewModel: IndiaJobsViewModel
+//    private lateinit var jobListAdapter: JobListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        indiaJobsViewModel= IndiaJobsViewModel()
-        jobListAdapter= JobListAdapter()
+//        indiaJobsViewModel= IndiaJobsViewModel()
+//        jobListAdapter= JobListAdapter()
 
     }
 
@@ -35,22 +35,22 @@ class JobFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        jobRecyclerView()
-        indiaJobsViewModel.getAllJobs()
-        indiaJobObserver()
+//        jobRecyclerView()
+//        indiaJobsViewModel.getAllJobs()
+//        indiaJobObserver()
     }
 
 
-    private fun indiaJobObserver() {
-        indiaJobsViewModel.observeIndiaJobs().observe(viewLifecycleOwner){
-            jobListAdapter.setJob(it as ArrayList<Data>)
-        }
-    }
-
-    private fun jobRecyclerView() {
-        binding.jobRecyclerView.apply {
-            layoutManager= LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
-            adapter=jobListAdapter
-        }
-    }
+//    private fun indiaJobObserver() {
+//        indiaJobsViewModel.observeIndiaJobs().observe(viewLifecycleOwner){
+//            jobListAdapter.setJob(it as ArrayList<Data>)
+//        }
+//    }
+//
+//    private fun jobRecyclerView() {
+//        binding.jobRecyclerView.apply {
+//            layoutManager= LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
+//            adapter=jobListAdapter
+//        }
+//    }
 }
