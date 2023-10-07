@@ -7,4 +7,5 @@ data class UserData(
     val profession:String?="",
     val profile:String?="",
     val password:String?="",
+    val phone:String?=""
 )

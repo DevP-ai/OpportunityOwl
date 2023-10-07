@@ -98,7 +98,9 @@ class RegistrationActivity : AppCompatActivity() {
         val email = binding.userEmail.text.toString()
         val password = binding.userPassword.text.toString()
         val profession = binding.userProfession.text.toString()
-        authViewModel.saveData(name, email, password, image, profession)
+        val num=binding.userNumber.text.toString()
+        val phone="+91${num}"
+        authViewModel.saveData(name, email, password, image, profession,phone)
     }
 
     //User Register With Email and Password and also call the above  uploadImage function

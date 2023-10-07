@@ -113,6 +113,7 @@ class PostFragment :DialogFragment() {
                 )
             }
         } }
+        startActivity(Intent(requireActivity(),HomeFragment::class.java))
     }
 
 

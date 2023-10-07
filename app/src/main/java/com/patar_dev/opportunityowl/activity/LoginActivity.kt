@@ -25,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
 
         //Initialize variables
 
+        binding.txtRegister.setOnClickListener {
+            startActivity(Intent(this,RegistrationActivity::class.java))
+        }
+
 
         binding.btnLogin.setOnClickListener {
             if(binding.userEmail.text.toString().isEmpty()){
