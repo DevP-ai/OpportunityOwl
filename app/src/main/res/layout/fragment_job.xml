@@ -67,12 +67,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-    
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/jobUpdateFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_17sdp"
         android:layout_marginBottom="@dimen/_20sdp"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
