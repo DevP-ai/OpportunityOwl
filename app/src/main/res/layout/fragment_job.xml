@@ -47,17 +47,19 @@
         android:id="@+id/jobRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toStartOf="@id/card"
         app:layout_constraintEnd_toEndOf="@id/card"
         app:layout_constraintTop_toBottomOf="@id/card"
         tools:listitem="@layout/job_item"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/editFab"
+        android:id="@+id/jobUpdateFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/ic_edit"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"

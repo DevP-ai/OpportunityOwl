@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.JobUpdateFragment">
 
     <ScrollView
@@ -15,21 +15,20 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true">
 
 
                 <LinearLayout
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -37,61 +36,76 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/jobCompanyImage"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/sp_logo"
-                            android:scaleType="centerCrop"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Select Company Logo"
-                            android:gravity="center"
-                            android:textStyle="bold"
-                            android:textColor="@color/blue"/>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_10sdp"
                             android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
                             android:orientation="vertical">
 
-                            <EditText
-                                android:id="@+id/jobPostTitle"
+                            <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Job Title"
-                                android:background="@drawable/edt_bg"
-                                android:textSize="@dimen/_16ssp"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"/>
+                                android:layout_margin="@dimen/_5sdp">
 
-                            <EditText
-                                android:id="@+id/jobPostCompanyName"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Company Name"
-                                android:layout_marginTop="@dimen/_3sdp"
-                                android:background="@drawable/edt_bg"
-                                android:textSize="@dimen/_16ssp"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"/>
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/jobPostTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Job Title"
+                                    android:inputType="text"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
 
-                            <EditText
-                                android:id="@+id/jobPostLocation"
+
+                            <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Job Location"
-                                android:layout_marginTop="@dimen/_3sdp"
-                                android:background="@drawable/edt_bg"
-                                android:textSize="@dimen/_16ssp"
-                                android:textColor="@color/black"
-                                android:textStyle="bold"/>
+                                android:layout_margin="@dimen/_5sdp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/jobPostCompanyName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Company Name"
+                                    android:inputType="text"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/jobPostLocation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Job Location"
+                                    android:inputType="text"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/jobPostSalary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Salary"
+                                    android:inputType="text|number"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -100,36 +114,36 @@
                         android:id="@+id/jobDescription"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
-                        android:background="@drawable/edt_bg"
-                        android:hint="Enter text"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_6sdp"
-                        android:gravity="start"/>
+                        android:background="@drawable/edt_bg"
+                        android:gravity="start"
+                        android:hint="Description" />
 
                     <ImageView
                         android:id="@+id/jobImagePost"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
-                        android:layout_marginTop="@dimen/_2sdp"/>
+                        android:layout_marginTop="@dimen/_2sdp" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/jobImgFab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_image"
-                        app:maxImageSize="@dimen/_30sdp"
+                        android:backgroundTint="@color/gray"
                         android:scaleType="center"
-                        android:backgroundTint="@color/gray"/>
+                        android:src="@drawable/ic_image"
+                        app:maxImageSize="@dimen/_30sdp" />
+
                     <Button
                         android:id="@+id/postJobButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:text="Post"/>
+                        android:text="Post" />
 
                 </LinearLayout>
-
 
 
             </androidx.cardview.widget.CardView>

@@ -26,11 +26,11 @@ class PostFragment :DialogFragment() {
     private lateinit var storage:FirebaseStorage
     private lateinit var profileViewModel: ProfileViewModel
     private lateinit var postViewModel: PostViewModel
-    private  var imageUri:Uri?=null
     private var name:String?=""
     private var profession:String?=""
     private var profile:String?=""
 
+    private  var imageUri:Uri?=null
     private var selectImage=registerForActivityResult(ActivityResultContracts.GetContent()){
         imageUri=it
         binding.imagePost.setImageURI(imageUri)

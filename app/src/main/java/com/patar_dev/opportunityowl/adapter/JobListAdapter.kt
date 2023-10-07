@@ -6,25 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.patar_dev.opportunityowl.databinding.JobItemBinding
 import com.patar_dev.opportunityowl.model.geoLocationData.Data
+import com.patar_dev.opportunityowl.model.job.JobModel
+import com.patar_dev.opportunityowl.model.postmodel.PostModel
 
-class JobListAdapter:RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
-    private var jobList = ArrayList<Data>()
+class JobListAdapter(private val jobList: List<JobModel>):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
 
-    fun setJob(jobList: ArrayList<Data>) {
-        this.jobList = jobList
-        notifyDataSetChanged()
-    }
-
-    inner class JobListViewHolder(val binding: JobItemBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class JobListViewHolder(var binding: JobItemBinding) :RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobListViewHolder {
-        return JobListViewHolder(
-            JobItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+        return JobListViewHolder(JobItemBinding.inflate(LayoutInflater.from(parent.context),parent, false)
         )
     }
 
@@ -33,8 +23,12 @@ class JobListAdapter:RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: JobListViewHolder, position: Int) {
-        holder.binding.jobTitle.text = jobList[position].job_title
-        holder.binding.companyName.text = jobList[position].company
-        holder.binding.location.text = jobList[position].location
+         Glide.with(holder.itemView)
+             .load(jobList[position].jobImage)
+             .into(holder.binding.companyLogo)
+
+        holder.binding.jobTitle.text=jobList[position].jobTitle
+        holder.binding.companyName.text=jobList[position].companyName
+        holder.binding.location.text=jobList[position].location
     }
 }

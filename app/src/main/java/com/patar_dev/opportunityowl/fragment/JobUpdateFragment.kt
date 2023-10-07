@@ -1,33 +1,38 @@
 package com.patar_dev.opportunityowl.fragment
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import com.patar_dev.opportunityowl.R
+import com.patar_dev.opportunityowl.databinding.FragmentJobUpdateBinding
+import com.patar_dev.opportunityowl.viewModel.job.JobPostViewModel
+import java.util.UUID
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [JobUpdateFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class JobUpdateFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding:FragmentJobUpdateBinding
+    private lateinit var storage: FirebaseStorage
+    private lateinit var jobPostViewModel: JobPostViewModel
 
+    private var imageUri:Uri?=null
+    private var selectImage=registerForActivityResult(ActivityResultContracts.GetContent()){
+        imageUri=it
+
+        binding.jobImagePost.setImageURI(imageUri)
+        jobPostViewModel=ViewModelProvider(this)[JobPostViewModel::class.java]
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+        storage=FirebaseStorage.getInstance()
     }
 
     override fun onCreateView(
@@ -35,26 +40,48 @@ class JobUpdateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_job_update, container, false)
+        binding=FragmentJobUpdateBinding.inflate(layoutInflater)
+        return binding.root
+
+
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment JobUpdateFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            JobUpdateFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.jobImgFab.setOnClickListener {
+            selectImage.launch("image/*")
+        }
+
+        binding.postJobButton.setOnClickListener {
+
+            imageUri!!.let {uploadImage(it)  }
+        }
     }
+
+    private fun uploadImage(imageUri: Uri) {
+        val storage=storage.getReference("JobPostImage").child(UUID.randomUUID().toString())
+        storage.putFile(imageUri!!)
+            .addOnSuccessListener {
+                storage.downloadUrl
+                    .addOnSuccessListener {image->
+                        savePost(image.toString())
+                    }
+            }
+
+    }
+
+    private fun savePost(image: String) {
+        val uid=FirebaseAuth.getInstance().currentUser!!.uid
+        val title=binding.jobPostTitle.text.toString()
+        val company=binding.jobPostCompanyName.text.toString()
+        val location=binding.jobPostLocation.text.toString()
+        val salary=binding.jobPostSalary.text.toString()
+        val description=binding.jobDescription.text.toString()
+        jobPostViewModel.saveJob(uid,title,company,location,salary,description,image)
+
+        findNavController().navigate(R.id.action_jobUpdateFragment_to_jobFragment)
+    }
+
 }
