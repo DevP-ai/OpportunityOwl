@@ -6,72 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_5sdp"
-            android:orientation="horizontal">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/userProfile"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="@dimen/_60sdp"
-                android:src="@drawable/sp_logo" />
+            android:layout_height="match_parent">
 
 
-            <EditText
-                android:id="@+id/edtPost"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="@dimen/_10sdp"
-                android:background="@drawable/bg"
-                android:editable="false"
-                android:hint="Start a post"
-                android:padding="@dimen/_12sdp" />
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:orientation="horizontal">
 
-    </androidx.cardview.widget.CardView>
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:background="@color/gray"
-        app:layout_constraintEnd_toEndOf="@id/card"
-        app:layout_constraintStart_toStartOf="@id/card"
-        app:layout_constraintTop_toBottomOf="@id/card" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/postRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_2sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line"
-            android:layout_marginBottom="@dimen/_10sdp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/post_design"/>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userProfile"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/sp_logo" />
 
 
+                    <EditText
+                        android:id="@+id/edtPost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/bg"
+                        android:editable="false"
+                        android:hint="Start a post"
+                        android:padding="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="@id/card"
+                app:layout_constraintStart_toStartOf="@id/card"
+                app:layout_constraintTop_toBottomOf="@id/card" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/postRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                tools:listitem="@layout/post_design" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
