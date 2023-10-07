@@ -12,16 +12,25 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.patar_dev.opportunityowl.activity.MainActivity
 import com.patar_dev.opportunityowl.databinding.FragmentPostBinding
+import com.patar_dev.opportunityowl.viewModel.post.PostViewModel
+import com.patar_dev.opportunityowl.viewModel.profile.ProfileViewModel
 import java.util.UUID
 
 class PostFragment :DialogFragment() {
     private lateinit var binding:FragmentPostBinding
     private lateinit var storage:FirebaseStorage
+    private lateinit var profileViewModel: ProfileViewModel
+    private lateinit var postViewModel: PostViewModel
     private  var imageUri:Uri?=null
+    private var name:String?=""
+    private var profession:String?=""
+    private var profile:String?=""
+
     private var selectImage=registerForActivityResult(ActivityResultContracts.GetContent()){
         imageUri=it
         binding.imagePost.setImageURI(imageUri)
@@ -30,6 +39,9 @@ class PostFragment :DialogFragment() {
         super.onCreate(savedInstanceState)
 
         storage=FirebaseStorage.getInstance()
+        profileViewModel=ViewModelProvider(this)[ProfileViewModel::class.java]
+        postViewModel=ViewModelProvider(this)[PostViewModel::class.java]
+
 
     }
     fun showFullWidthPopup(fragmentManager: FragmentManager) {
@@ -53,6 +65,21 @@ class PostFragment :DialogFragment() {
             selectImage.launch("image/*")
         }
 
+
+        profileViewModel.userProfile.observe(viewLifecycleOwner,{user->
+            Glide.with(this)
+                .load(user.profile)
+                .into(binding.postProfile)
+
+            binding.postName.text=user.name
+            binding.postProfession.text=user.profession
+
+            name=user.name
+            profession=user.profession
+            profile=user.profile
+
+        })
+
         binding.postButton.setOnClickListener {
             if(binding.edtPost.text.toString().isEmpty()){
 
@@ -70,12 +97,23 @@ class PostFragment :DialogFragment() {
             .addOnSuccessListener {
                 storage.downloadUrl
                     .addOnSuccessListener {image->
-
+                         savePost(image.toString())
                     }
             }
 
     }
 
+    private fun savePost(image: String) {
+        val content=binding.edtPost.text.toString()
+        val uid=FirebaseAuth.getInstance().currentUser!!.uid
+        profession?.let { name?.let { it1 ->
+            profile?.let { it2 ->
+                postViewModel.savePost(uid,content,image,
+                    it1, it, it2
+                )
+            }
+        } }
+    }
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

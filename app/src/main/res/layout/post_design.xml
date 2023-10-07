@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_margin="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_20sdp">
 
         <LinearLayout
@@ -18,9 +19,9 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/postProfile"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_70sdp"
+                android:id="@+id/postUserProfile"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:src="@drawable/profile" />
 
             <LinearLayout
@@ -31,7 +32,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/userName"
+                    android:id="@+id/postUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="User Name"
@@ -40,7 +41,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/userProfession"
+                    android:id="@+id/postUserProfession"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Profession" />
@@ -50,7 +51,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/postContent"
+            android:id="@+id/userPostContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
@@ -59,10 +60,11 @@
             android:text="User Post Content will deliver here"/>
 
         <ImageView
-            android:id="@+id/postImage"
+            android:id="@+id/userPostImage"
             android:layout_marginTop="@dimen/_6sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_250sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_margin="@dimen/_15sdp"
             android:scaleType="centerCrop"/>
 
     </LinearLayout>

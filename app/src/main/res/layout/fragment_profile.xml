@@ -24,7 +24,7 @@
                     android:id="@+id/bgImage"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:background="#4F4F51"
+                    android:background="#673AB7"
                     android:scaleType="fitXY">
                 </ImageView>
 
@@ -44,15 +44,15 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#35504D"
+                        android:background="#656465"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/profileName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_7sdp"
-                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
                             android:layout_marginTop="5dp"
                             android:hint="Loading..."
                             android:background="@color/white"
@@ -64,12 +64,14 @@
                             android:id="@+id/profileProfession"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_7sdp"
-                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
                             android:hint="Loading..."
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:textSize="@dimen/_15ssp"
                             android:background="@color/white"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="@dimen/_6sdp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -85,9 +87,12 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:src="@drawable/ic_edit"
-            app:maxImageSize="@dimen/_30sdp"/>
+            app:maxImageSize="@dimen/_30sdp" />
 
     </RelativeLayout>
 

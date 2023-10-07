@@ -34,6 +34,7 @@ class ProfileFragment : Fragment() {
 
         profileViewModel.userProfile.observe(viewLifecycleOwner,{user->
              binding.profileName.text=user.name
+            binding.profileProfession.text=user.profession
              Glide.with(this)
                  .load(user.profile)
                  .into(binding.profilePhoto)

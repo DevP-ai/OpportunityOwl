@@ -36,6 +36,5 @@ class JobListAdapter:RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
         holder.binding.jobTitle.text = jobList[position].job_title
         holder.binding.companyName.text = jobList[position].company
         holder.binding.location.text = jobList[position].location
-        holder.binding.postTime.text=jobList[position].posted_time
     }
 }
