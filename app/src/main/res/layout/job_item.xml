@@ -14,8 +14,9 @@
         android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/companyLogo"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_70sdp"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_gravity="center"
             android:src="@drawable/bag"
             android:scaleType="centerCrop"/>
 
