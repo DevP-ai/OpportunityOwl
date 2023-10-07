@@ -133,8 +133,18 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/gray"
                         android:scaleType="center"
+                        android:layout_marginStart="@dimen/_6sdp"
                         android:src="@drawable/ic_image"
                         app:maxImageSize="@dimen/_30sdp" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/lineProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:indicatorColor="@color/red"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@+id/postJobButton"

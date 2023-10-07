@@ -55,7 +55,7 @@ class JobUpdateFragment : Fragment() {
         }
 
         binding.postJobButton.setOnClickListener {
-
+            binding.lineProgressBar.visibility=View.VISIBLE
             imageUri!!.let {uploadImage(it)  }
         }
     }
@@ -81,6 +81,7 @@ class JobUpdateFragment : Fragment() {
         val description=binding.jobDescription.text.toString()
         jobPostViewModel.saveJob(uid,title,company,location,salary,description,image)
 
+        binding.lineProgressBar.visibility=View.GONE
         findNavController().navigate(R.id.action_jobUpdateFragment_to_jobFragment)
     }
 

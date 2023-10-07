@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.facebook.shimmer.Shimmer
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -28,6 +29,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var postAdapter: PostAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,6 +40,8 @@ class HomeFragment : Fragment() {
         homeViewModel=ViewModelProvider(this)[HomeViewModel::class.java]
 
         postAdapter= PostAdapter(emptyList())
+
+
 
     }
 
@@ -56,16 +61,21 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_postFragment)
         }
 
+        binding.lineProgressBar.visibility=View.VISIBLE
 
         profileViewModel.userProfile.observe(viewLifecycleOwner,{user->
             Glide.with(this)
                 .load(user.profile)
                 .into(binding.userProfile)
+            binding.lineProgressBar.visibility=View.GONE
         })
 
         homeViewModel.userPost.observe(viewLifecycleOwner,{postList->
              postAdapter=PostAdapter(postList)
              binding.postRecyclerView.adapter=postAdapter
+            binding.lineProgressBar.visibility=View.GONE
         })
+
+
     }
 }

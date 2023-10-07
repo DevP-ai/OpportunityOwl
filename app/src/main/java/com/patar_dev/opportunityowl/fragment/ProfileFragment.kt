@@ -44,6 +44,7 @@ class ProfileFragment : Fragment() {
             activity?.finish()
         }
 
+        binding.lineProgressBar.visibility=View.VISIBLE
 
         profileViewModel.userProfile.observe(viewLifecycleOwner,{user->
              binding.profileName.text=user.name
@@ -51,6 +52,8 @@ class ProfileFragment : Fragment() {
              Glide.with(this)
                  .load(user.profile)
                  .into(binding.profilePhoto)
+
+            binding.lineProgressBar.visibility=View.GONE
         })
     }
     companion object {

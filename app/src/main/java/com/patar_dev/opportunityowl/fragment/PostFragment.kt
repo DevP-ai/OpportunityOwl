@@ -85,6 +85,7 @@ class PostFragment : Fragment() {
             if (binding.edtPost.text.toString().isEmpty()) {
 
             } else {
+                binding.lineProgressBar.visibility=View.VISIBLE
                 imageUri!!.let { uploadImage(it) }
             }
         }
@@ -105,11 +106,13 @@ class PostFragment : Fragment() {
     }
 
     private fun savePost(image: String) {
+
         val content = binding.edtPost.text.toString()
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
         profession?.let { name?.let { it1 -> profile?.let { it2 ->
                     postViewModel.savePost(uid, content, image, it1, it, it2) }
             } }
+        binding.lineProgressBar.visibility=View.GONE
         findNavController().navigate(R.id.action_postFragment_to_homeFragment2)
     }
 

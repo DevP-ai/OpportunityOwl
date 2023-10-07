@@ -63,7 +63,6 @@
                 tools:listitem="@layout/job_item" />
 
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
@@ -77,7 +76,7 @@
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.984"
         app:layout_constraintStart_toStartOf="parent"
         app:maxImageSize="@dimen/_30sdp" />
 
