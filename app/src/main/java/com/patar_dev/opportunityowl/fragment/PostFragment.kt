@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,18 +12,15 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
-import com.patar_dev.opportunityowl.R
 import com.patar_dev.opportunityowl.activity.MainActivity
 import com.patar_dev.opportunityowl.databinding.FragmentPostBinding
-import com.patar_dev.opportunityowl.viewModel.post.PostViewModel
+import java.util.UUID
 
 class PostFragment :DialogFragment() {
     private lateinit var binding:FragmentPostBinding
     private lateinit var storage:FirebaseStorage
-    private lateinit var postViewModel: PostViewModel
     private  var imageUri:Uri?=null
     private var selectImage=registerForActivityResult(ActivityResultContracts.GetContent()){
         imageUri=it
@@ -35,7 +31,6 @@ class PostFragment :DialogFragment() {
 
         storage=FirebaseStorage.getInstance()
 
-        postViewModel=ViewModelProvider(requireActivity())[PostViewModel::class.java]
     }
     fun showFullWidthPopup(fragmentManager: FragmentManager) {
         show(fragmentManager, "post_fragment_tag")
@@ -70,22 +65,17 @@ class PostFragment :DialogFragment() {
     }
 
     private fun uploadImage(imageUri: Uri) {
-        val storage=storage.getReference("UserPostImage")
+        val storage=storage.getReference("UserPostImage").child(UUID.randomUUID().toString())
         storage.putFile(imageUri!!)
             .addOnSuccessListener {
                 storage.downloadUrl
                     .addOnSuccessListener {image->
-                        savePost(image.toString())
+
                     }
             }
 
     }
-    private fun savePost(image: String) {
-        val content=binding.edtPost.text.toString()
-        postViewModel.savePost(FirebaseAuth.getInstance().currentUser!!.uid,content,image)
-        startActivity(Intent(requireContext(),MainActivity::class.java))
 
-    }
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

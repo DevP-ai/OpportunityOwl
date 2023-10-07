@@ -106,4 +106,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
+
+    //Shimmer Effect
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
 }

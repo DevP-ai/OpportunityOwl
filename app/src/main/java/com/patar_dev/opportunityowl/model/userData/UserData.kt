@@ -6,5 +6,5 @@ data class UserData(
     val email:String?="",
     val profession:String?="",
     val profile:String?="",
-    val password:String?=""
+    val password:String?="",
 )
