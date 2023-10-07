@@ -45,8 +45,9 @@
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/profilePhoto"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="@dimen/_75sdp"
+                            android:layout_height="@dimen/_75sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_image" />
 
