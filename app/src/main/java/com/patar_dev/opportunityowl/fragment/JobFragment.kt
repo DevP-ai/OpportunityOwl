@@ -45,10 +45,11 @@ class JobFragment : Fragment() {
         binding.jobUpdateFab.setOnClickListener {
             findNavController().navigate(R.id.action_jobFragment_to_jobUpdateFragment)
         }
-
+         binding.lineProgressBar.visibility=View.VISIBLE
         jobsViewModel.userJobPost.observe(viewLifecycleOwner, { jobList ->
             jobListAdapter = JobListAdapter(jobList,this)
             binding.jobRecyclerView.adapter = jobListAdapter
+            binding.lineProgressBar.visibility=View.GONE
         })
         
     }
