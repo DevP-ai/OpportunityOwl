@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.PostFragment">
 
     <ScrollView
@@ -12,24 +12,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true">
 
 
                 <LinearLayout
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -41,8 +40,8 @@
                             android:id="@+id/postProfile"
                             android:layout_width="@dimen/_50sdp"
                             android:layout_height="@dimen/_50sdp"
-                            android:src="@drawable/sp_logo"
-                            android:scaleType="centerCrop"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/sp_logo" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -55,17 +54,17 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Loading..."
-                                android:textSize="@dimen/_16ssp"
                                 android:textColor="@color/black"
-                                android:textStyle="bold"/>
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/postProfession"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
                                 android:hint="Loading..."
-                                android:textSize="@dimen/_13ssp"
-                                android:layout_marginTop="@dimen/_4sdp"/>
+                                android:textSize="@dimen/_13ssp" />
 
 
                         </LinearLayout>
@@ -76,37 +75,37 @@
                         android:id="@+id/edtPost"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
-                        android:background="@drawable/edt_bg"
-                        android:hint="Enter text"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_6sdp"
-                        android:gravity="start"/>
+                        android:background="@drawable/edt_bg"
+                        android:gravity="start"
+                        android:hint="Enter text" />
 
                     <ImageView
                         android:id="@+id/imagePost"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
-                        android:layout_marginTop="@dimen/_2sdp"/>
+                        android:layout_marginTop="@dimen/_2sdp" />
 
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
-                         android:id="@+id/imgFab"
+                        android:id="@+id/imgFab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_image"
-                        app:maxImageSize="@dimen/_30sdp"
+                        android:backgroundTint="@color/gray"
                         android:scaleType="center"
-                        android:backgroundTint="@color/gray"/>
+                        android:src="@drawable/ic_image"
+                        app:maxImageSize="@dimen/_30sdp" />
+
                     <Button
                         android:id="@+id/postButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:text="Post"/>
+                        android:text="Post" />
 
                 </LinearLayout>
-
 
 
             </androidx.cardview.widget.CardView>
@@ -115,4 +114,4 @@
 
     </ScrollView>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

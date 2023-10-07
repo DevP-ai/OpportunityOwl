@@ -35,12 +35,12 @@ class JobFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentJobBinding.inflate(layoutInflater)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.jobUpdateFab.setOnClickListener {
             findNavController().navigate(R.id.action_jobFragment_to_jobUpdateFragment)
         }

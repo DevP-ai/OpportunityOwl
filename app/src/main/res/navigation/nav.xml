@@ -10,6 +10,9 @@
         android:name="com.patar_dev.opportunityowl.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_postFragment"
+            app:destination="@id/postFragment" />
     </fragment>
     <fragment
         android:id="@+id/resourceFragment"
@@ -40,5 +43,15 @@
             android:id="@+id/action_jobUpdateFragment_to_jobFragment"
             app:destination="@id/jobFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.patar_dev.opportunityowl.fragment.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
 
 </navigation>
