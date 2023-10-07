@@ -8,6 +8,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -20,6 +21,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.patar_dev.opportunityowl.R
 import com.patar_dev.opportunityowl.activity.MainActivity
 import com.patar_dev.opportunityowl.databinding.FragmentPostBinding
+import com.patar_dev.opportunityowl.model.job.JobModel
 import com.patar_dev.opportunityowl.viewModel.post.PostViewModel
 import com.patar_dev.opportunityowl.viewModel.profile.ProfileViewModel
 import java.util.UUID
@@ -57,6 +59,7 @@ class PostFragment : Fragment() {
         binding = FragmentPostBinding.inflate(layoutInflater)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -115,5 +118,9 @@ class PostFragment : Fragment() {
         binding.lineProgressBar.visibility=View.GONE
         findNavController().navigate(R.id.action_postFragment_to_homeFragment2)
     }
+
+
+
+
 
 }

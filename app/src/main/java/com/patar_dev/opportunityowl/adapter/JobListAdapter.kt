@@ -5,12 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.patar_dev.opportunityowl.databinding.JobItemBinding
-import com.patar_dev.opportunityowl.model.geoLocationData.Data
+import com.patar_dev.opportunityowl.fragment.JobFragment
 import com.patar_dev.opportunityowl.model.job.JobModel
-import com.patar_dev.opportunityowl.model.postmodel.PostModel
 
-class JobListAdapter(private val jobList: List<JobModel>):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
+class JobListAdapter(private val jobList: List<JobModel>, private val itemClickListener: JobFragment):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
 
+    interface OnItemClickListener {
+        fun onItemClick(uid: String)
+    }
     inner class JobListViewHolder(var binding: JobItemBinding) :RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobListViewHolder {
@@ -30,5 +32,12 @@ class JobListAdapter(private val jobList: List<JobModel>):RecyclerView.Adapter<J
         holder.binding.jobTitle.text=jobList[position].jobTitle
         holder.binding.companyName.text=jobList[position].companyName
         holder.binding.location.text=jobList[position].location
+
+
+        holder.itemView.setOnClickListener {
+            val job = jobList[position]
+            job.uid?.let { id -> itemClickListener.onItemClick(id) }
+        }
+
     }
 }

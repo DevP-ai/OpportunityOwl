@@ -7,5 +7,8 @@ data class JobModel(
     val location:String?="",
     val salary:String?="",
     val description:String?="",
-    val jobImage:String?=""
+    val jobImage:String?="",
+    val hrName:String?="",
+    val hrProfession:String?="",
+    val hrImage:String?=""
 )

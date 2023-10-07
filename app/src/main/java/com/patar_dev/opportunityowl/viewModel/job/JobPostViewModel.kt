@@ -9,7 +9,8 @@ class JobPostViewModel:ViewModel(){
 
     private val database=FirebaseDatabase.getInstance()
 
-    fun saveJob(uid:String,jobTitle:String,companyName:String,location:String,salary:String,description:String,jobImage:String){
+    fun saveJob(uid:String,jobTitle:String,companyName:String,location:String,
+                salary:String,description:String,jobImage:String,hrName:String,hrProfession:String,hrImage:String){
         val job=JobModel(
             uid=uid,
             jobTitle=jobTitle,
@@ -17,9 +18,12 @@ class JobPostViewModel:ViewModel(){
             location=location,
             salary=salary,
             description=description,
-            jobImage=jobImage
+            jobImage=jobImage,
+            hrName=hrName,
+            hrProfession=hrProfession,
+            hrImage=hrImage
         )
-        database.getReference("JobPost").child(uid+ UUID.randomUUID())
+        database.getReference("JobPost").child(uid)
             .setValue(job)
     }
 }

@@ -33,6 +33,7 @@
         <action
             android:id="@+id/action_jobFragment_to_jobUpdateFragment"
             app:destination="@id/jobUpdateFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/jobUpdateFragment"
