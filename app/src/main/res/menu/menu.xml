@@ -4,11 +4,6 @@
        android:icon="@drawable/ic_home"
        android:title="Home"/>
 
-    <item android:id="@+id/resourceFragment"
-        android:icon="@drawable/ic_library"
-        android:title="Resource"/>
-
-
     <item android:id="@+id/jobFragment"
         android:icon="@drawable/ic_job"
         android:title="Job"/>
