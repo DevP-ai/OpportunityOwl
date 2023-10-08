@@ -11,27 +11,29 @@ We prioritize user privacy and data security, ensuring a safe and enjoyable expe
 ## Youtube link
 https://www.youtube.com/watch?v=Kb4NOP_9q1k
 ## Technology Used
-MVVM Architecture: Organize the app's structure and maintain separation of concerns.
+**MVVM Architecture:** Organize the app's structure and maintain separation of concerns.
 
-Fire Database: Store user user data.
+**Fire Database:** Store user user data.
 
-Retrofit: For sending notification (FCM) 
+**Retrofit:** For sending notification (FCM) 
 
-Firebase Authentication: To Authenticate users.
+**Firebase Authentication:** To Authenticate users.
 
-Firebase Storage: To Store user images 
+**Firebase Storage:** To Store user images 
 
-Glide: Efficiently load and display images.
+**Glide:** Efficiently load and display images.
 
-RecyclerView: Display lists of data efficiently.
+**Circular ImageView:**:To Show Circle Image View.
 
-ViewModel: Store and manage UI-related data.
+**RecyclerView:** Display lists of data efficiently.
 
-LiveData: Notify UI components of data changes.
+**ViewModel:** Store and manage UI-related data.
 
-Data Binding: Simplify UI code and reduce layout XML complexity.
+**LiveData:** Notify UI components of data changes.
 
-Navigation Component: Implement navigation within the app.
+**Data Binding:** Simplify UI code and reduce layout XML complexity.
+
+**Navigation Component:** Implement navigation within the app.
 
 ## Screnshoot
 ![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/0f3acf22-6162-43c3-a27f-e8a68e7e2cf3)
