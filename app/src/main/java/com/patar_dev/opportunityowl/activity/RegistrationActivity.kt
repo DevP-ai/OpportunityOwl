@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Observer
@@ -52,6 +53,7 @@ class RegistrationActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
+            binding.lineProgressBar.visibility=View.VISIBLE
             if(binding.userName.text.toString().isEmpty()){
                 binding.userName.error="name required"
             }else if(binding.userEmail.text.toString().isEmpty()){
@@ -119,9 +121,11 @@ class RegistrationActivity : AppCompatActivity() {
             .observe(this, Observer { success ->
                 if (success) {
                     imageUri?.let { uploadImage(it) }  //Call uploadImage function
+                    binding.lineProgressBar.visibility=View.GONE
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {
+                    binding.lineProgressBar.visibility=View.GONE
                     Toast.makeText(this, "Sign Up Failed", Toast.LENGTH_SHORT).show()
                 }
 
