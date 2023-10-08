@@ -39,7 +39,6 @@ class JobPostViewModel:ViewModel(){
         )
         database.getReference("JobPost").child(uid)
             .setValue(job).addOnCompleteListener{
-                Log.d("tt" , "Saevd")
                 sendNotification(companyName , city , jobTitle , description)
             }
     }
