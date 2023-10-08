@@ -198,7 +198,7 @@
                                         android:layout_marginStart="@dimen/_20ssp"
                                         android:layout_weight="0.20"
                                         android:checked="false"
-                                        android:text="FullTime"
+                                        android:text="Full Time"
                                         android:textColor="@color/blue"
                                         android:textStyle="bold"
                                         app:useMaterialThemeColors="false" />
