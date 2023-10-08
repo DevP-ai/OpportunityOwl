@@ -29,11 +29,7 @@ class JobFragment : Fragment() {
     private lateinit var jobListAdapter: JobListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         jobsViewModel = ViewModelProvider(this)[JobViewModel::class.java]
-
-
-
     }
 
     override fun onCreateView(
@@ -82,8 +78,6 @@ class JobFragment : Fragment() {
         val intent=Intent(activity,DescriptionActivity::class.java)
         intent.putExtra("ID",id)
         startActivity(intent)
-//        val action=R.id.action_jobFragment_to_jobDescriptionFragment22
-//       findNavController().navigate(action)
     }
 
 
