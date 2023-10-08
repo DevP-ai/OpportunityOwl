@@ -27,7 +27,10 @@ class JobFragment : Fragment() {
 
     private lateinit var jobsViewModel: JobViewModel
     private lateinit var jobListAdapter: JobListAdapter
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        jobsViewModel = ViewModelProvider(this)[JobViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,28 +44,16 @@ class JobFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        jobsViewModel = ViewModelProvider(this)[JobViewModel::class.java]
         binding.jobUpdateFab.setOnClickListener {
             findNavController().navigate(R.id.action_jobFragment_to_jobUpdateFragment)
         }
-
         prepareRvForJobFragment()
 
-        binding.lineProgressBar.visibility = View.VISIBLE
-
-        val savedUserPosts = jobsViewModel.getSavedUserPosts()
-        if (savedUserPosts != null) {
-            jobListAdapter.setJobList(savedUserPosts)
-        }
-
+         binding.lineProgressBar.visibility=View.VISIBLE
         jobsViewModel.userJobPost.observe(viewLifecycleOwner) { jobList ->
-            jobListAdapter.setJobList(jobList)
-            jobListAdapter.originalList = jobList as ArrayList<JobModel>
-            binding.lineProgressBar.visibility = View.GONE
+           jobListAdapter.setJobList(jobList)
+            binding.lineProgressBar.visibility=View.GONE
         }
-
-
-
         binding.searchJob.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -77,21 +68,21 @@ class JobFragment : Fragment() {
     }
 
     private fun prepareRvForJobFragment() {
-        jobListAdapter = JobListAdapter(this)
+        jobListAdapter   = JobListAdapter(this)
         binding.jobRecyclerView.apply {
             adapter = jobListAdapter
         }
     }
 
     fun onItemClick(id: String) {
-        val intent = Intent(activity, DescriptionActivity::class.java)
-        intent.putExtra("ID", id)
+        val intent=Intent(activity,DescriptionActivity::class.java)
+        intent.putExtra("ID",id)
         startActivity(intent)
-//        val action=R.id.action_jobFragment_to_jobDescriptionFragment22
-//       findNavController().navigate(action)
     }
 
-    companion object {
-        const val ID = "com.patar_dev.opportunityowl.fragment.uid"
+
+
+    companion object{
+        const val ID="com.patar_dev.opportunityowl.fragment.uid"
     }
 }

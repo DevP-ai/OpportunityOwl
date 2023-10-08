@@ -11,12 +11,14 @@ import com.patar_dev.opportunityowl.databinding.JobItemBinding
 import com.patar_dev.opportunityowl.fragment.JobFragment
 import com.patar_dev.opportunityowl.model.job.JobModel
 
-class JobListAdapter(private val itemClickListener: JobFragment):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() , Filterable {
+class JobListAdapter( val itemClickListener: JobFragment):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() ,
+    Filterable {
 
-     var jobList = ArrayList<JobModel>()
+
+    var jobList = ArrayList<JobModel>()
     var originalList = ArrayList<JobModel>()
 
-    fun setJobList(jobList: List<JobModel>){
+    fun setJobList(jobList: List<JobModel>) {
         this.jobList = jobList as ArrayList<JobModel>
         this.originalList = ArrayList(jobList)
         notifyDataSetChanged()
@@ -52,8 +54,7 @@ class JobListAdapter(private val itemClickListener: JobFragment):RecyclerView.Ad
         }
 
     }
-    private var filter : JobFilter ? = null
-
+    private var filter : JobFilter? = null
     override fun getFilter(): Filter {
         if(filter == null) return JobFilter(this,originalList)
         return  filter as JobFilter
