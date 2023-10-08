@@ -28,7 +28,7 @@ class JobListAdapter(private val jobList: List<JobModel>, private val itemClickL
 
         holder.binding.jobTitle.text=jobList[position].jobTitle
         holder.binding.companyName.text=jobList[position].companyName
-        holder.binding.location.text=jobList[position].location
+        holder.binding.location.text=jobList[position].city
 
 
         holder.itemView.setOnClickListener {

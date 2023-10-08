@@ -76,20 +76,47 @@
                                     android:textSize="@dimen/_16ssp" />
                             </com.google.android.material.textfield.TextInputLayout>
 
-                            <com.google.android.material.textfield.TextInputLayout
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="@dimen/_3sdp">
+                                android:orientation="horizontal">
 
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/jobPostLocation"
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_3sdp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/jobPostCity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="City"
+                                        android:inputType="text"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_16ssp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <com.google.android.material.textfield.TextInputLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Job Location"
-                                    android:inputType="text"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/_16ssp" />
-                            </com.google.android.material.textfield.TextInputLayout>
+                                    android:layout_weight="1"
+                                    android:layout_margin="@dimen/_3sdp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/jobPostCountry"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Country"
+                                        android:inputType="text"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_16ssp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                            </LinearLayout>
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
@@ -107,54 +134,85 @@
                             </com.google.android.material.textfield.TextInputLayout>
 
 
-                            <LinearLayout
-                                android:background="@drawable/edt_bg"
-                                android:id="@+id/userTypeLayout"
-                                android:orientation="horizontal"
-                                android:layout_marginTop="10dp"
+                            <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent">
+                                android:layout_margin="@dimen/_3sdp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/jobPostSkills"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Skills required"
+                                    android:inputType="text"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_3sdp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/jobPostExperience"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Experience"
+                                    android:inputType="text"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/userTypeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/edt_bg"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Job Type:"
-                                    android:textSize="@dimen/_15ssp"
-                                    android:layout_marginStart="6dp"
                                     android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Job Type:"
                                     android:textColor="@color/blue"
-                                    android:textStyle="bold"/>
+                                    android:textSize="@dimen/_15ssp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
-                                    android:orientation="horizontal"
                                     android:id="@+id/userRadioGroup"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
 
                                     <com.google.android.material.radiobutton.MaterialRadioButton
-                                        android:id="@+id/radioBtnAdmin"
+                                        android:id="@+id/radioBtnFullTime"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Full Time"
-                                        android:textStyle="bold"
                                         android:layout_marginStart="@dimen/_20ssp"
-                                        android:textColor="@color/blue"
+                                        android:layout_weight="0.20"
                                         android:checked="false"
-                                        app:useMaterialThemeColors="false"
-                                        android:layout_weight="0.20"/>
+                                        android:text="FullTime"
+                                        android:textColor="@color/blue"
+                                        android:textStyle="bold"
+                                        app:useMaterialThemeColors="false" />
 
                                     <com.google.android.material.radiobutton.MaterialRadioButton
-                                        android:id="@+id/radioBtnSubAdmin"
+                                        android:id="@+id/radioBtnInternship"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Internship"
-                                        android:textStyle="bold"
-                                        android:textColor="@color/blue"
+                                        android:layout_weight="0.20"
                                         android:checked="false"
-                                        app:useMaterialThemeColors="false"
-                                        android:layout_weight="0.20"/>
+                                        android:text="Internship"
+                                        android:textColor="@color/blue"
+                                        android:textStyle="bold"
+                                        app:useMaterialThemeColors="false" />
 
                                 </RadioGroup>
 
@@ -170,13 +228,13 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_3sdp">
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/jobDescription"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_150sdp"
-                            android:hint="Description"
                             android:gravity="start"
-                            android:inputType="text"
+                            android:hint="Description"
+                            android:inputType="textMultiLine"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_16ssp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -191,9 +249,9 @@
                         android:id="@+id/jobImgFab"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
                         android:backgroundTint="@color/gray"
                         android:scaleType="center"
-                        android:layout_marginStart="@dimen/_6sdp"
                         android:src="@drawable/ic_image"
                         app:maxImageSize="@dimen/_30sdp" />
 
@@ -201,10 +259,10 @@
                         android:id="@+id/lineProgressBar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:indeterminate="true"
                         android:layout_marginTop="@dimen/_8sdp"
-                        app:indicatorColor="@color/red"
-                        android:visibility="gone"/>
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:indicatorColor="@color/red" />
 
                     <Button
                         android:id="@+id/postJobButton"
