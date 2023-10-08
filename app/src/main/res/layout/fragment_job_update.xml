@@ -164,23 +164,28 @@
 
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/jobDescription"
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_150sdp"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginEnd="@dimen/_6sdp"
-                        android:background="@drawable/edt_bg"
-                        android:gravity="start"
-                        android:hint="Description" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_3sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/jobDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_150sdp"
+                            android:hint="Description"
+                            android:gravity="start"
+                            android:inputType="text"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16ssp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <ImageView
                         android:id="@+id/jobImagePost"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
-                        android:src="@drawable/ic_image"
-                        android:layout_marginTop="@dimen/_2sdp" />
+                        android:src="@drawable/imgview" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/jobImgFab"
