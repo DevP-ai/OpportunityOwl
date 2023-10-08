@@ -46,12 +46,12 @@ class JobFragment : Fragment() {
             findNavController().navigate(R.id.action_jobFragment_to_jobUpdateFragment)
         }
          binding.lineProgressBar.visibility=View.VISIBLE
-        jobsViewModel.userJobPost.observe(viewLifecycleOwner, { jobList ->
-            jobListAdapter = JobListAdapter(jobList,this)
+        jobsViewModel.userJobPost.observe(viewLifecycleOwner) { jobList ->
+            jobListAdapter = JobListAdapter(jobList, this)
             binding.jobRecyclerView.adapter = jobListAdapter
-            binding.lineProgressBar.visibility=View.GONE
-        })
-        
+            binding.lineProgressBar.visibility = View.GONE
+        }
+
     }
 
     fun onItemClick(id: String) {

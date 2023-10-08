@@ -69,16 +69,16 @@ class JobUpdateFragment : Fragment() {
             imageUri!!.let {uploadImage(it)  }
         }
 
-        profileViewModel.userProfile.observe(viewLifecycleOwner,{
-            hrName=it.name.toString()
-            hrProfession=it.profession.toString()
-            hrImage=it.profile.toString()
-        })
+        profileViewModel.userProfile.observe(viewLifecycleOwner) {
+            hrName = it.name.toString()
+            hrProfession = it.profession.toString()
+            hrImage = it.profile.toString()
+        }
     }
 
     private fun uploadImage(imageUri: Uri) {
         val storage=storage.getReference("JobPostImage").child(UUID.randomUUID().toString())
-        storage.putFile(imageUri!!)
+        storage.putFile(imageUri)
             .addOnSuccessListener {
                 storage.downloadUrl
                     .addOnSuccessListener {image->

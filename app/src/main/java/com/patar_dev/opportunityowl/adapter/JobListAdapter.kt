@@ -10,14 +10,11 @@ import com.patar_dev.opportunityowl.model.job.JobModel
 
 class JobListAdapter(private val jobList: List<JobModel>, private val itemClickListener: JobFragment):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
 
-    interface OnItemClickListener {
-        fun onItemClick(uid: String)
-    }
+
     inner class JobListViewHolder(var binding: JobItemBinding) :RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobListViewHolder {
-        return JobListViewHolder(JobItemBinding.inflate(LayoutInflater.from(parent.context),parent, false)
-        )
+        return JobListViewHolder(JobItemBinding.inflate(LayoutInflater.from(parent.context),parent, false))
     }
 
     override fun getItemCount(): Int {
