@@ -14,7 +14,7 @@ import com.patar_dev.opportunityowl.model.postmodel.PostModel
 class JobViewModel:ViewModel() {
     private val auth= FirebaseAuth.getInstance()
     private val dbReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("JobPost")
-
+    var retrievedUserPosts: ArrayList<JobModel> = arrayListOf()
     private val _userJobPost = MutableLiveData<List<JobModel>>()
     val userJobPost: MutableLiveData<List<JobModel>>
         get() = _userJobPost
@@ -40,6 +40,9 @@ class JobViewModel:ViewModel() {
             }
 
         })
+    }
+    fun getSavedUserPosts(): List<JobModel>? {
+        return _userJobPost.value
     }
 
 

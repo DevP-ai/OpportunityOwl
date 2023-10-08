@@ -18,7 +18,7 @@ import kotlinx.coroutines.MainScope
 import kotlin.random.Random
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
-    private val channelId = "viraj"
+    private val channelId = "opportunityOWl"
 
     override fun onNewToken(token: String) {
         val tokenSharedPreferences = getSharedPreferences("NewToken", MODE_PRIVATE)
