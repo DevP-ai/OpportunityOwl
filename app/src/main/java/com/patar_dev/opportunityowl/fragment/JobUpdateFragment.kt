@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -23,7 +26,7 @@ class JobUpdateFragment : Fragment() {
     private lateinit var storage: FirebaseStorage
     private lateinit var jobPostViewModel: JobPostViewModel
     private var auth=FirebaseAuth.getInstance()
-
+    private var jobType:String?=null
     private var hrName:String?=""
     private var hrProfession:String?=""
     private var hrImage:String?=""
@@ -35,6 +38,15 @@ class JobUpdateFragment : Fragment() {
         imageUri=it
 
         binding.jobImagePost.setImageURI(imageUri)
+
+        val radioBtnFullTime = view?.findViewById<MaterialRadioButton>(R.id.radioBtnFullTime)
+        val radioBtnInternship = view?.findViewById<MaterialRadioButton>(R.id.radioBtnInternship)
+
+        binding.userRadioGroup.setOnCheckedChangeListener{_,checkID ->
+
+            jobType= view?.findViewById<MaterialRadioButton>(checkID)?.text.toString()
+
+        }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,16 +105,22 @@ class JobUpdateFragment : Fragment() {
         val uid=FirebaseAuth.getInstance().currentUser!!.uid+UUID.randomUUID()
         val title=binding.jobPostTitle.text.toString()
         val company=binding.jobPostCompanyName.text.toString()
-        val location=binding.jobPostLocation.text.toString()
+        val city=binding.jobPostCity.text.toString()
+        val country=binding.jobPostCountry.text.toString()
+        val skills=binding.jobPostSkills.text.toString()
+        val experience=binding.jobPostExperience.text.toString()
         val salary=binding.jobPostSalary.text.toString()
         val description=binding.jobDescription.text.toString()
 
         hrName?.let {
             hrProfession?.let { it1 ->
                 hrImage?.let { it2 ->
-                    jobPostViewModel.saveJob(uid,title,company,location,salary,description,image,
-                        it, it1, it2
-                    )
+                    jobType?.let { it3 ->
+                        jobPostViewModel.saveJob(uid,title,company,city,country,skills,experience,
+                            it3,salary,description,image,
+                            it, it1, it2
+                        )
+                    }
                 }
             }
         }

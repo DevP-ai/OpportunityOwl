@@ -17,13 +17,18 @@ class JobPostViewModel:ViewModel(){
 
     private val database=FirebaseDatabase.getInstance()
 
-    fun saveJob(uid:String,jobTitle:String,companyName:String,location:String,
-                salary:String,description:String,jobImage:String,hrName:String,hrProfession:String,hrImage:String){
+    fun saveJob(uid:String,jobTitle:String,companyName:String,city:String,country:String,
+                skills:String,experience:String,jobType:String,salary:String,description:String,jobImage:String,hrName:String,
+                hrProfession:String,hrImage:String){
         val job=JobModel(
             uid=uid,
             jobTitle=jobTitle,
             companyName=companyName,
-            location=location,
+            city =city,
+            country=country,
+            skills=skills,
+            experience=experience,
+            jobType=jobType,
             salary=salary,
             description=description,
             jobImage=jobImage,
@@ -33,7 +38,7 @@ class JobPostViewModel:ViewModel(){
         )
         database.getReference("JobPost").child(uid)
             .setValue(job).addOnCompleteListener{
-                sendNotification(companyName , location , jobTitle , description)
+                sendNotification(companyName , city , jobTitle , description)
             }
     }
 

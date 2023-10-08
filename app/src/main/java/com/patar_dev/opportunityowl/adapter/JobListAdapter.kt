@@ -26,9 +26,13 @@ class JobListAdapter(private val jobList: List<JobModel>, private val itemClickL
              .load(jobList[position].jobImage)
              .into(holder.binding.companyLogo)
 
-        holder.binding.jobTitle.text=jobList[position].jobTitle
+        val type=jobList[position].jobType
+        val title=jobList[position].jobTitle
+        holder.binding.jobTitle.text="${title}(${type})"
         holder.binding.companyName.text=jobList[position].companyName
-        holder.binding.location.text=jobList[position].location
+        val city=jobList[position].city
+        val country=jobList[position].country
+        holder.binding.location.text="${city},${country}"
 
 
         holder.itemView.setOnClickListener {
