@@ -12,7 +12,7 @@ We prioritize user privacy and data security, ensuring a safe and enjoyable expe
 https://www.canva.com/design/DAFwrkiFcTg/2clvwfeJszjYNj7YGn4_Ow/edit?utm_content=DAFwrkiFcTg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## Youtube Link
-https://www.youtube.com/watch?v=Kb4NOP_9q1k
+[https://www.youtube.com/watch?v=Kb4NOP_9q1k](https://www.youtube.com/watch?v=HwhsXtVNj7I)
 ## Technology Used
 **MVVM Architecture:** Organize the app's structure and maintain separation of concerns.
 
