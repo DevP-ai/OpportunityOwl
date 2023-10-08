@@ -36,6 +36,14 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
+        <service
+            android:name=".model.notification.MyFirebaseMessagingService"
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.Send">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.Reciever" />
+            </intent-filter>
+        </service>
     </application>
-
 </manifest>
