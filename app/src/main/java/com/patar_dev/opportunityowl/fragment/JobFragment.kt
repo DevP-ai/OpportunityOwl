@@ -27,9 +27,9 @@ class JobFragment : Fragment() {
 
     private lateinit var jobsViewModel: JobViewModel
     private lateinit var jobListAdapter: JobListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        jobsViewModel = ViewModelProvider(this)[JobViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -43,12 +43,17 @@ class JobFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        jobsViewModel = ViewModelProvider(this)[JobViewModel::class.java]
 
         binding.jobUpdateFab.setOnClickListener {
             findNavController().navigate(R.id.action_jobFragment_to_jobUpdateFragment)
         }
         prepareRvForJobFragment()
 
+        val savedUserPosts = jobsViewModel.getSavedUserPosts()
+        if (savedUserPosts != null) {
+            jobListAdapter.setJobList(savedUserPosts)
+        }
          binding.lineProgressBar.visibility=View.VISIBLE
         jobsViewModel.userJobPost.observe(viewLifecycleOwner) { jobList ->
            jobListAdapter.setJobList(jobList)
