@@ -1,7 +1,11 @@
 package com.patar_dev.opportunityowl.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.ScrollView
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +28,10 @@ class DescriptionActivity : AppCompatActivity() {
         binding=ActivityDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnApplyJob.setOnClickListener {
+            startActivity(Intent(this,ApplicationActivity::class.java))
+        }
+
         val uid=intent.getStringExtra("ID")
         jobDescriptionViewModel=ViewModelProvider(this)[JobDescriptionViewModel::class.java]
         jobDescriptionViewModel.fetchData(uid.toString())
@@ -32,6 +40,9 @@ class DescriptionActivity : AppCompatActivity() {
             val type=it.jobType
             val title=it.jobTitle
             binding.title.text="${title}(${type})"
+
+
+            binding.salary.text=" ₹ ${it.salary}"
 
             binding.type.text=type
 
@@ -63,4 +74,6 @@ class DescriptionActivity : AppCompatActivity() {
 
 
     }
+
+
 }

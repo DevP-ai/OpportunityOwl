@@ -36,6 +36,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/btnBack"
                             android:layout_width="@dimen/_35sdp"
                             android:layout_height="@dimen/_35sdp"
                             android:layout_gravity="center"
@@ -63,6 +64,7 @@
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/companyImage"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_width="@dimen/_55sdp"
                             android:layout_height="@dimen/_55sdp"
                             android:layout_gravity="center"
@@ -125,6 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -153,6 +156,7 @@
 
                     </LinearLayout>
 
+
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -175,6 +179,34 @@
                             android:layout_height="@dimen/_40sdp"
                             android:gravity="center_vertical"
                             android:hint="Skills"
+                            android:textSize="@dimen/_15ssp" />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_15sdp"
+                            android:gravity="center_vertical"
+                            android:text="Salary/Stipen: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/salary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:gravity="center_vertical"
+                            android:hint="Salary"
                             android:textSize="@dimen/_15ssp" />
 
 
@@ -257,6 +289,8 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -281,6 +315,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_15ssp"
                                 android:hint="Hr Name"/>
 
@@ -306,18 +341,18 @@
 
                     </LinearLayout>
 
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_40sdp"
-                            android:text="Message"
-                            android:textAllCaps="false"
-                            android:layout_weight="1"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:textSize="@dimen/_14ssp"
-                            android:backgroundTint="@color/blue"
-                            android:textColor="@color/white"
-                            android:layout_marginBottom="@dimen/_10sdp"
-                            android:layout_marginStart="@dimen/_5sdp"/>
+<!--                        <Button-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/_40sdp"-->
+<!--                            android:text="Message"-->
+<!--                            android:textAllCaps="false"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginTop="@dimen/_10sdp"-->
+<!--                            android:textSize="@dimen/_14ssp"-->
+<!--                            android:backgroundTint="@color/blue"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:layout_marginBottom="@dimen/_10sdp"-->
+<!--                            android:layout_marginStart="@dimen/_5sdp"/>-->
 
 
                 </LinearLayout>
@@ -353,7 +388,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
 
     </ScrollView>
 
