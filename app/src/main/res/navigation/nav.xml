@@ -15,11 +15,6 @@
             app:destination="@id/postFragment" />
     </fragment>
     <fragment
-        android:id="@+id/resourceFragment"
-        android:name="com.patar_dev.opportunityowl.fragment.ResourceFragment"
-        android:label="fragment_resource"
-        tools:layout="@layout/fragment_resource" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.patar_dev.opportunityowl.fragment.ProfileFragment"
         android:label="fragment_profile"
