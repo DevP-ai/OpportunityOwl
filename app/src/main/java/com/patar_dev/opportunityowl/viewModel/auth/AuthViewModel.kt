@@ -43,7 +43,6 @@ class AuthViewModel:ViewModel() {
         database.getReference("Users")
             .child(auth.currentUser!!.uid!!)
             .setValue(data)
-
     }
 
     fun loginUser(email: String,password: String):LiveData<Boolean>{

@@ -1,11 +1,9 @@
 package com.patar_dev.opportunityowl.viewModel
 
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.patar_dev.opportunityowl.api.RetrofitApiInstance
+import com.patar_dev.opportunityowl.api.job.RetrofitApiInstance
 import com.patar_dev.opportunityowl.model.geoLocationData.Data
 import com.patar_dev.opportunityowl.model.geoLocationData.IndiaJobsList
 import retrofit2.Call
