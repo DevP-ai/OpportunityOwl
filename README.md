@@ -13,11 +13,13 @@ https://www.youtube.com/watch?v=Kb4NOP_9q1k
 ## Technology Used
 MVVM Architecture: Organize the app's structure and maintain separation of concerns.
 
-Retrofit: Handle network requests and interact with the MealDB API.
+Fire Database: Store user user data.
 
-Room Database: Store user data and favorite food items locally.
+Retrofit: For sending notification (FCM) 
 
-Razorpay: Enable secure and convenient payment processing.
+Firebase Authentication: To Authenticate users.
+
+Firebase Storage: To Store user images 
 
 Glide: Efficiently load and display images.
 
