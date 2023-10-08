@@ -8,6 +8,27 @@ We prioritize user privacy and data security, ensuring a safe and enjoyable expe
 ## App link
 [https://drive.google.com/drive/folders/1v-stzjXcC605TQDL-sZbLcCKHZbPiw3C?usp=sharing](https://drive.google.com/drive/folders/1v-stzjXcC605TQDL-sZbLcCKHZbPiw3C?usp=sharing)
 
+## Technology Used
+MVVM Architecture: Organize the app's structure and maintain separation of concerns.
+
+Retrofit: Handle network requests and interact with the MealDB API.
+
+Room Database: Store user data and favorite food items locally.
+
+Razorpay: Enable secure and convenient payment processing.
+
+Glide: Efficiently load and display images.
+
+RecyclerView: Display lists of data efficiently.
+
+ViewModel: Store and manage UI-related data.
+
+LiveData: Notify UI components of data changes.
+
+Data Binding: Simplify UI code and reduce layout XML complexity.
+
+Navigation Component: Implement navigation within the app.
+
 ## Screnshoot
 ![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/0f3acf22-6162-43c3-a27f-e8a68e7e2cf3)
 
