@@ -49,6 +49,7 @@
                 <action android:name="com.google.android.c2dm.intent.Reciever" />
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>

@@ -18,7 +18,8 @@ class JobPostViewModel:ViewModel(){
     private val database=FirebaseDatabase.getInstance()
 
     fun saveJob(uid:String,jobTitle:String,companyName:String,city:String,country:String,
-                skills:String,experience:String,jobType:String,salary:String,description:String,jobImage:String,hrName:String,
+                skills:String,experience:String,jobType:String,salary:String,description:String,
+                jobImage:String,hrName:String,
                 hrProfession:String,hrImage:String){
         val job=JobModel(
             uid=uid,
@@ -38,6 +39,7 @@ class JobPostViewModel:ViewModel(){
         )
         database.getReference("JobPost").child(uid)
             .setValue(job).addOnCompleteListener{
+                Log.d("tt" , "Saevd")
                 sendNotification(companyName , city , jobTitle , description)
             }
     }

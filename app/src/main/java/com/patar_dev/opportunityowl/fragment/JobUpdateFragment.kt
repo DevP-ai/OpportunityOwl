@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -26,7 +27,7 @@ class JobUpdateFragment : Fragment() {
     private lateinit var storage: FirebaseStorage
     private lateinit var jobPostViewModel: JobPostViewModel
     private var auth=FirebaseAuth.getInstance()
-    private var jobType:String?=null
+    private var jobType:String = ""
     private var hrName:String?=""
     private var hrProfession:String?=""
     private var hrImage:String?=""
@@ -39,12 +40,10 @@ class JobUpdateFragment : Fragment() {
 
         binding.jobImagePost.setImageURI(imageUri)
 
-        val radioBtnFullTime = view?.findViewById<MaterialRadioButton>(R.id.radioBtnFullTime)
-        val radioBtnInternship = view?.findViewById<MaterialRadioButton>(R.id.radioBtnInternship)
 
         binding.userRadioGroup.setOnCheckedChangeListener{_,checkID ->
 
-            jobType= view?.findViewById<MaterialRadioButton>(checkID)?.text.toString()
+            jobType= binding.root.findViewById<RadioButton>(checkID)?.text.toString()
 
         }
     }
@@ -94,6 +93,7 @@ class JobUpdateFragment : Fragment() {
             .addOnSuccessListener {
                 storage.downloadUrl
                     .addOnSuccessListener {image->
+                        Toast.makeText(requireContext(), "HHH" , Toast.LENGTH_SHORT).show()
                         savePost(image.toString())
                     }
             }
@@ -112,10 +112,17 @@ class JobUpdateFragment : Fragment() {
         val salary=binding.jobPostSalary.text.toString()
         val description=binding.jobDescription.text.toString()
 
+
+        Toast.makeText(requireContext(), hrImage.toString() , Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), hrName.toString() , Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), hrProfession.toString() , Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), jobType.toString() , Toast.LENGTH_SHORT).show()
+
         hrName?.let {
             hrProfession?.let { it1 ->
                 hrImage?.let { it2 ->
                     jobType?.let { it3 ->
+                        Toast.makeText(requireContext(), "Saving" , Toast.LENGTH_SHORT).show()
                         jobPostViewModel.saveJob(uid,title,company,city,country,skills,experience,
                             it3,salary,description,image,
                             it, it1, it2
