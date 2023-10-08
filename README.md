@@ -5,6 +5,9 @@ Our app allows users to sign up and log in securely using their email and passwo
 The core features of our app include the ability to post and browse job listings, apply for positions seamlessly, and engage with a dynamic social feed. 
 We prioritize user privacy and data security, ensuring a safe and enjoyable experience. 
 
+## App link
+https://drive.google.com/drive/folders/1v-stzjXcC605TQDL-sZbLcCKHZbPiw3C?usp=sharing
+
 ## Screnshoot
 ![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/0f3acf22-6162-43c3-a27f-e8a68e7e2cf3)
 
