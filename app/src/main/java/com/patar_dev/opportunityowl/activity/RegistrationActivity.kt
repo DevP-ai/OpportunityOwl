@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.storage.FirebaseStorage
 import com.patar_dev.opportunityowl.databinding.ActivityRegistrationBinding
 import com.patar_dev.opportunityowl.viewModel.auth.AuthViewModel
@@ -94,13 +95,20 @@ class RegistrationActivity : AppCompatActivity() {
 
     //Save Data in Firebase Database
     private fun saveData(image: String) {
-        val name = binding.userName.text.toString()
-        val email = binding.userEmail.text.toString()
-        val password = binding.userPassword.text.toString()
-        val profession = binding.userProfession.text.toString()
-        val num=binding.userNumber.text.toString()
-        val phone="+91${num}"
-        authViewModel.saveData(name, email, password, image, profession,phone)
+        FirebaseMessaging.getInstance().token.addOnCompleteListener{ task ->
+            if(!task.isSuccessful){
+                return@addOnCompleteListener
+            }
+            val token = task.result
+            val name = binding.userName.text.toString()
+            val email = binding.userEmail.text.toString()
+            val password = binding.userPassword.text.toString()
+            val profession = binding.userProfession.text.toString()
+            val num=binding.userNumber.text.toString()
+            val phone="+91${num}"
+            authViewModel.saveData(name, email, password, image, profession,phone,token)
+        }
+
     }
 
     //User Register With Email and Password and also call the above  uploadImage function
