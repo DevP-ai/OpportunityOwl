@@ -20,7 +20,7 @@ class JobFilter(
                 if(query.any { search ->
                         jobs.companyName?.uppercase(Locale.getDefault())?.contains(search) == true ||
                                 jobs.jobTitle?.uppercase(Locale.getDefault())?.contains(search) == true ||
-                                jobs.location?.uppercase(Locale.getDefault())?.contains(search) == true
+                                jobs.city?.uppercase(Locale.getDefault())?.contains(search) == true
 
                     }){
                     filteredJobList.add(jobs)
