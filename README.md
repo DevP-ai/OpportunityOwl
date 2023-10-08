@@ -9,6 +9,14 @@ We prioritize user privacy and data security, ensuring a safe and enjoyable expe
 ![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/0f3acf22-6162-43c3-a27f-e8a68e7e2cf3)
 
 
+![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/dbe6c6cc-db1e-4c62-b079-fbb8ab35b9e5)
+
+
+![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/9a58ec7c-1b86-4dc8-b6ec-82bc5093b6d7)
+
+
+
+
 ## System Breakdown
 ###  1.User Authentication Module:
 Sign-up: Allows users to create an account by providing their email and password.
