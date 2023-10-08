@@ -2,25 +2,14 @@ package com.patar_dev.opportunityowl.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.patar_dev.opportunityowl.JobFilter
 import com.patar_dev.opportunityowl.databinding.JobItemBinding
 import com.patar_dev.opportunityowl.fragment.JobFragment
 import com.patar_dev.opportunityowl.model.job.JobModel
 
-class JobListAdapter(private val itemClickListener: JobFragment):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() , Filterable {
+class JobListAdapter(var jobList: List<JobModel>, private val itemClickListener: JobFragment):RecyclerView.Adapter<JobListAdapter.JobListViewHolder>() {
 
-     var jobList = ArrayList<JobModel>()
-    var originalList = ArrayList<JobModel>()
-
-    fun setJobList(jobList: List<JobModel>){
-        this.jobList = jobList as ArrayList<JobModel>
-        this.originalList = ArrayList(jobList)
-        notifyDataSetChanged()
-    }
 
     inner class JobListViewHolder(var binding: JobItemBinding) :RecyclerView.ViewHolder(binding.root)
 
@@ -51,11 +40,5 @@ class JobListAdapter(private val itemClickListener: JobFragment):RecyclerView.Ad
             job.uid?.let { id -> itemClickListener.onItemClick(id) }
         }
 
-    }
-    private var filter : JobFilter ? = null
-
-    override fun getFilter(): Filter {
-        if(filter == null) return JobFilter(this,originalList)
-        return  filter as JobFilter
     }
 }
