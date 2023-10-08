@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,14 +7,354 @@
     android:gravity="center"
     tools:context=".activity.DescriptionActivity">
 
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Job Title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_20ssp"
-        android:layout_gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_back" />
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15ssp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="Job Title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18ssp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/companyImage"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_55sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/sp_logo" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/companyName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Company Name"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_15ssp" />
+
+                            <TextView
+                                android:id="@+id/location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Location"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:textColor="@color/blue"
+                                android:textSize="@dimen/_13ssp"/>
+
+                            <TextView
+                                android:id="@+id/type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Type"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:textSize="@dimen/_11ssp"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_job"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_15sdp"
+                            android:gravity="center_vertical"
+                            android:text="Experience: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/experience"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:gravity="center_vertical"
+                            android:hint="Experience"
+                            android:textSize="@dimen/_15ssp" />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:drawableLeft="@drawable/ic_checklist"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_15sdp"
+                            android:gravity="center_vertical"
+                            android:text="Skills: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/skills"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:gravity="center_vertical"
+                            android:hint="Skills"
+                            android:textSize="@dimen/_15ssp" />
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                       <Button
+                           android:id="@+id/btnApplyJob"
+                           android:layout_width="@dimen/_120sdp"
+                           android:layout_height="@dimen/_40sdp"
+                           android:text="Apply"
+                           android:textAllCaps="false"
+                           android:layout_weight="1"
+                           android:textSize="@dimen/_14ssp"
+                           android:backgroundTint="@color/blue"
+                           android:textColor="@color/white"
+                           android:layout_marginBottom="@dimen/_10sdp"
+                           android:layout_marginStart="@dimen/_5sdp"/>
+
+
+                        <Button
+                            android:id="@+id/btnSaveJob"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:text="Save"
+                            android:layout_weight="1"
+                            android:textAllCaps="false"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_gravity="right"
+                            android:textSize="@dimen/_14ssp"
+                            android:backgroundTint="@color/gray"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginStart="@dimen/_5sdp"/>
+
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hrCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_15sdp"
+                            android:gravity="center_vertical"
+                            android:text="Meet the hiring team"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/hrPhoto"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_55sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_image" />
+
+                        <LinearLayout
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/hrName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_15ssp"
+                                android:hint="Hr Name"/>
+
+                            <TextView
+                                android:id="@+id/hrProfession"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:textSize="@dimen/_13ssp"
+                                android:hint="Hr Profession"/>
+
+
+                            <TextView
+                                android:id="@+id/hrCompany"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/_13ssp"
+                                android:hint="Recruiting at ..."/>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:text="Message"
+                            android:textAllCaps="false"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_14ssp"
+                            android:backgroundTint="@color/blue"
+                            android:textColor="@color/white"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginStart="@dimen/_5sdp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Job Description"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16ssp"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp">
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:gravity="start"
+                    android:hint="Description"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
