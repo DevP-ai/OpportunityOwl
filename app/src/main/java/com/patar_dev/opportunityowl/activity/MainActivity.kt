@@ -18,4 +18,9 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.hostFragment)
         NavigationUI.setupWithNavController(binding.bottomNav, navController)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
 }

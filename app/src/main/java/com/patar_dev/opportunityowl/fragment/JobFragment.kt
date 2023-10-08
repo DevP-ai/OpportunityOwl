@@ -63,6 +63,7 @@ class JobFragment : Fragment() {
     }
 
 
+
     companion object{
         const val ID="com.patar_dev.opportunityowl.fragment.uid"
     }
