@@ -29,7 +29,8 @@ class AuthViewModel:ViewModel() {
         return registrationLiveData
     }
 
-    fun saveData(name:String,email:String,password:String,profile:String,profession:String,phone:String){
+    fun saveData(name:String,email:String,password:String,profile:String,profession:String,phone:String, token : String){
+
         val data=UserData(
             uid = auth.currentUser!!.uid,
             name = name,
@@ -37,7 +38,8 @@ class AuthViewModel:ViewModel() {
             password=password,
             profile = profile,
             profession = profession,
-            phone = phone
+            phone = phone,
+            userToken = token
         )
 
         database.getReference("Users")
