@@ -38,7 +38,7 @@ https://www.canva.com/design/DAFwrkiFcTg/2clvwfeJszjYNj7YGn4_Ow/edit?utm_content
 
 **Navigation Component:** Implement navigation within the app.
 
-## Screnshoot
+## Screnshot
 ![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/0f3acf22-6162-43c3-a27f-e8a68e7e2cf3)
 
 
