@@ -38,7 +38,7 @@ https://www.canva.com/design/DAFwrkiFcTg/2clvwfeJszjYNj7YGn4_Ow/edit?utm_content
 
 **Navigation Component:** Implement navigation within the app.
 
-## Screnshot
+## Screenshot
 ![image](https://github.com/DevP-ai/OpportunityOwl/assets/107491760/0f3acf22-6162-43c3-a27f-e8a68e7e2cf3)
 
 
@@ -51,7 +51,7 @@ https://www.canva.com/design/DAFwrkiFcTg/2clvwfeJszjYNj7YGn4_Ow/edit?utm_content
 
 
 ## System Breakdown
-###  1.User Authentication Module:
+###  1. User Authentication Module:
 Sign-up: Allows users to create an account by providing their email and password.
 
 Login: Authenticates users with their credentials, granting access to the app.
