@@ -52,44 +52,44 @@ https://www.canva.com/design/DAFwrkiFcTg/2clvwfeJszjYNj7YGn4_Ow/edit?utm_content
 
 ## System Breakdown
 ###  1. User Authentication Module:
-Sign-up: Allows users to create an account by providing their email and password.
+**Sign-up:** Allows users to create an account by providing their email and password.
 
-Login: Authenticates users with their credentials, granting access to the app.
+**Login:** Authenticates users with their credentials, granting access to the app.
 
 
 ### 2.Notification Module:
-Push Notifications: Send push notifications to users for important events, Jobs, and updates.
+**Push Notifications:** Send push notifications to users for important events, Jobs, and updates.
 
 ### 3. Feed Module:
-Post Creation: Users can create text-based posts, and upload images.
+**Post Creation:** Users can create text-based posts, and upload images.
 
-Feed Viewing: Users can scroll through the feed to see posts from others.
+**Feed Viewing:** Users can scroll through the feed to see posts from others.
 
 ### 4. User Profile Management:
-Profile Creation: Users can create and edit their profiles, including personal information, contact details, and profile picture upload.
+**Profile Creation:** Users can create and edit their profiles, including personal information, contact details, and profile picture upload.
 
-Profile Viewing: Others can view user profiles to learn more about them.
+**Profile Viewing:** Others can view user profiles to learn more about them.
 
 ### 5. Job Module:
-Job Posting: Users can post job listings with details like job title, description, location, and application instructions.
+**Job Posting:** Users can post job listings with details like job title, description, location, and application instructions.
 
-Job Search: Users can search for jobs based on keywords, location, or industry.
+**Job Search:** Users can search for jobs based on keywords, location, or industry.
 
-Job Application: Users can apply for jobs, by submitting relevant documents like resumes and cover letters.
+**Job Application:** Users can apply for jobs, by submitting relevant documents like resumes and cover letters.
 
-Job Notifications: Notify users about new job postings matching their criteria.
+**Job Notifications:** Notify users about new job postings matching their criteria.
 
 ### 6.User Experience Module:
-User Interface (UI): Design a user-friendly and intuitive interface for seamless navigation.
+**User Interface (UI):** Design a user-friendly and intuitive interface for seamless navigation.
 
-Accessibility: Ensure that the app is accessible to users with disabilities.
+**Accessibility:** Ensure that the app is accessible to users with disabilities.
 
 
 ## LICENSE
 
-MIT License
+**MIT License**
 
-Copyright (c) 2023 Devajit Patar
+Copyright (c) 2023 **Devajit Patar**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
